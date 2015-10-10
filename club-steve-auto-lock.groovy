@@ -102,12 +102,14 @@ def check_door_actually_locked() // if locked, reset lock-attempt counter. If un
     		state.lockattempts = 0
     		log.debug "$lock0 is actually locked."
         	//sendPush "$lock0 is actually locked."
+                unschedule( lock_door )
     	}
     	else
     	{
 		state.lockattempts = state.lockattempts + 1
         	if ( state.lockattempts < 3 )
         	{
+                        unschedule( lock_door )
         		log.debug "$lock0 attempt #$state.lockattempts."
         		//sendPush "$lock0 attempt #$state.lockattempts."
         		runIn(30, "lock_door")
