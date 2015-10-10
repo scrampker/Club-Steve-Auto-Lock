@@ -99,7 +99,7 @@ def check_door_actually_locked() // if locked, reset lock-attempt counter. If un
 {
 	if (lock0.latestValue("lock") == "locked")
     	{
-    		state.lockattempts = 2
+    		state.lockattempts = 0
     		log.debug "$lock0 is actually locked."
         	//sendPush "$lock0 is actually locked."
     	}
