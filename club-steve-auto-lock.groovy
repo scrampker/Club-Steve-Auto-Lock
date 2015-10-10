@@ -76,6 +76,11 @@ def door_handler(evt)
     		log.debug "$lock0 was unlocked"
         	runIn(relock_delay, "lock_door")
 	}
+	if(evt.value == "locked")
+	{
+    		unschedule( lock_door )
+    		log.debug "$lock0 was locked"
+	}
 }
 
 def lock_door() // auto-lock specific
