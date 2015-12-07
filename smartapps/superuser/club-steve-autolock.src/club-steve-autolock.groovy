@@ -2,7 +2,8 @@
  *  Auto-locking door app for the house
  *
  *  Author: stevenascott@gmail.com
- *  Date: 2014-03-28
+ *  Date: 2015 12 06
+ *  Version: Beta 0.2
  */
 
 
