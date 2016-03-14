@@ -103,12 +103,12 @@ def acceleration_handler()
 
 def schedule_lock(locking_delay)
 {
-	state.current_lock_delay = $locking_delay // Update the global current delay (switches between lock/relock preference)
+	state.current_lock_delay = "$locking_delay" // Update the global current delay (switches between lock/relock preference)
 	state.failed_lock_attempts = 0
 	state.locking_scheduled = "true"
 	
 	debug_handler("Locking $pref_door_lock in $state.current_lock_delay seconds.")
-	debug_handler("Locking $pref_door_lock in $locking_delay.")
+	debug_handler("Locking $pref_door_lock in $locking_delay seconds.")
 	
 	if(state.current_lock_delay == 0) // Bypass the runIn mechanism, which sucks balls
 	{
