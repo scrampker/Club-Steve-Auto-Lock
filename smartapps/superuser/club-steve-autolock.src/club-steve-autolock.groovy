@@ -63,6 +63,7 @@ def initialize()
 	
 	state.locking_scheduled = "false"
 	state.failed_lock_attempts = 0
+	state.current_lock_delay = "test"
 }
 
 def debug_handler(msg)
@@ -114,7 +115,7 @@ def schedule_lock(locking_delay)
 	}
 	else
 	{
-		runIn(locking_delay, "lock_door")
+		runIn(state.current_lock_delay, "lock_door")
 	}
 }
 
