@@ -169,17 +169,18 @@ def lock_door() // auto-lock specific
 	debug_handler("Entering lock_door function.")
 	if (state.locking_scheduled == "true") // if the door has been opened, unlocked, etc, this flag will prevent it from tryagin again when we don't want to
 	{
-		okay_to_lock="true"
+		debug_handler("Locking was previously scheduled.")
+		okay_to_lock = "true"
 		if (pref_contact_sensor.latestValue("contact") == "open") // if the door is open, flag unsafe for locking
 		{
 			debug_handler("$pref_contact_sensor is open, attempting again in 30 seconds.")
-			okay_to_lock="false"
+			okay_to_lock = "false"
 		}
 		
 		if (pref_use_accelerometer == "true" && pref_contact_sensor.latestValue("acceleration") == "active") // if the door is in motion, flag unsafe for locking1
 		{
 			debug_handler("$pref_contact_sensor is active, attempting again in 30 seconds.")
-			okay_to_lock="false"	
+			okay_to_lock = "false"	
 		}
 		
 		if (okay_to_lock == "true")
