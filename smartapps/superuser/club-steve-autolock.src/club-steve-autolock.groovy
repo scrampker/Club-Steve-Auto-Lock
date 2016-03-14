@@ -24,7 +24,7 @@ preferences
     {
 		input "pref_contact_sensor", "capability.contactSensor", title: "Which contact sensor?", required: true
         input "pref_door_lock","capability.lock", title: "Which lock?", required: true
-		input "pref_use_accelerometer", "enum", title: "Would you like to use the accelerometer features?", required: true, defaultValue: "Yes"
+		input "pref_use_accelerometer", "enum", title: "Would you like to use the accelerometer features?", metadata: [values: ["Yes","No"]], required: true, defaultValue: "Yes"
         input "pref_door_closed_lock_delay", "number", title: "Delay for auto-Lock after door is closed? (Seconds)", required: true, defaultValue: 0
         input "pref_door_unlocked_relock_delay", "number", title: "Delay for re-lock w/o opening door? (Seconds)", required: true, defaultValue: 300
         input "pref_locking_attempts", number, title: "How many times should we send the locking command?", required: true, defaultValue: 1
