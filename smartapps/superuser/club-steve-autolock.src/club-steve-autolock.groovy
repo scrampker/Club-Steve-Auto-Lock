@@ -24,7 +24,7 @@ preferences
     {
 		input "pref_contact_sensor", "capability.contactSensor", title: "Which contact sensor?", required: true
         input "pref_door_lock","capability.lock", title: "Which lock?", required: true
-		input "pref_use_accelerometer", "enum", title: "Would you like to use the accelerometer features?", required: true, defaultValue: Yes
+		input "pref_use_accelerometer", "enum", title: "Would you like to use the accelerometer features?", required: true, defaultValue: "Yes"
         input "pref_door_closed_lock_delay", "number", title: "Delay for auto-Lock after door is closed? (Seconds)", required: true, defaultValue: 0
         input "pref_door_unlocked_relock_delay", "number", title: "Delay for re-lock w/o opening door? (Seconds)", required: true, defaultValue: 300
         input "pref_locking_attempts", number, title: "How many times should we send the locking command?", required: true, defaultValue: 1
@@ -32,8 +32,8 @@ preferences
 		input "pref_failed_locking_reattempts", number, title: "Upon locking failure, how many times should we try total?", required: true, defaultValue: 1
 		input "pref_failed_locking_reattempts_delay", number, title: "^^Delay between attempts? (Seconds)", required: true, defaultValue: 15
         input "pref_leftopen_delay", "number", title: "Notify if door open for X seconds.", required: true, defaultValue: 300
-        input "pref_push_enabled", "enum", title: "Enable NORMAL push notifications?", metadata: [values: ["Yes","No"]], required: true, defaultValue: Yes
-        input "pref_debug_notify", "enum", title: "Enable DEBUG push notifications?", metadata: [values: ["Yes","No"]], required: true, defaultValue: No
+        input "pref_push_enabled", "enum", title: "Enable NORMAL push notifications?", metadata: [values: ["Yes","No"]], required: true, defaultValue: "Yes"
+        input "pref_debug_notify", "enum", title: "Enable DEBUG push notifications?", metadata: [values: ["Yes","No"]], required: true, defaultValue: "No"
     } 
 }
 
