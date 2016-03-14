@@ -185,7 +185,8 @@ def lock_door() // auto-lock specific
 		
 		if (okay_to_lock == "true")
 		{
-			if (state.total_lock_attempts < $pref_locking_attempts)
+        	debug_handler("OK to lock.")
+			if (state.total_lock_attempts < pref_locking_attempts)
 			{
 				debug_handler("Sending lock command to $pref_door_lock.")
 				pref_door_lock.lock() // The actual lock command.
@@ -231,7 +232,7 @@ def check_door_actually_locked() // if locked, reset lock-attempt counter. If un
     else // if the door doesn't show locked, try again, if the user asked to
     {
 		state.failed_lock_attempts = $state.failed_lock_attempts + 1
-		if ( $state.failed_lock_attempts < $pref_failed_locking_reattempts )
+		if ( state.failed_lock_attempts < pref_failed_locking_reattempts )
         {
 			unschedule( lock_door )
 			debug_handler("$pref_door_lock lock attempt #$state.failed_lock_attempts of $pref_failed_locking_reattempts failed.")
